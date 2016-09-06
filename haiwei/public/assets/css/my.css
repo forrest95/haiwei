@@ -1,0 +1,153 @@
+.pagination {
+    padding-left: 0;
+    margin: 1.5rem 0;
+    list-style: none;
+    color: #999;
+    text-align: left
+}
+
+.pagination:after, .pagination:before {
+    content: " ";
+    display: table
+}
+
+.pagination:after {
+    clear: both
+}
+
+.pagination > li {
+    display: inline-block
+}
+
+.pagination > li > a, .pagination > li > span {
+    position: relative;
+    display: block;
+    padding: .5em 1em;
+    text-decoration: none;
+    line-height: 1.2;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 0;
+    margin-bottom: 5px;
+    margin-right: 5px
+}
+
+.pagination > li:last-child > a, .pagination > li:last-child > span {
+    margin-right: 0
+}
+
+.pagination > li > a:focus, .pagination > li > a:hover, .pagination > li > span:focus, .pagination > li > span:hover {
+    background-color: #eee
+}
+
+.pagination > .am-active > a, .pagination > .am-active > a:focus, .pagination > .am-active > a:hover, .pagination > .am-active > span, .pagination > .am-active > span:focus, .pagination > .am-active > span:hover {
+    z-index: 2;
+    color: #fff;
+    background-color: #0e90d2;
+    border-color: #0e90d2;
+    cursor: default
+}
+
+.pagination > .am-disabled > a, .pagination > .am-disabled > a:focus, .pagination > .am-disabled > a:hover, .pagination > .am-disabled > span, .pagination > .am-disabled > span:focus, .pagination > .am-disabled > span:hover {
+    color: #999;
+    background-color: #fff;
+    border-color: #ddd;
+    cursor: not-allowed;
+    pointer-events: none
+}
+
+.pagination .pagination-prev {
+    float: left
+}
+
+.pagination .pagination-prev a {
+    border-radius: 0
+}
+
+.pagination .pagination-next {
+    float: right
+}
+
+.pagination .pagination-next a {
+    border-radius: 0
+}
+
+.pagination-centered {
+    text-align: center
+}
+
+.pagination-right {
+    text-align: right
+}
+
+
+.daterangepicker {
+    display: none
+}
+
+.am-gallery-imgbordered.xGallery .am-gallery-item img {
+    height: 130px;
+}
+
+.am-gallery-item {
+    position: relative;
+}
+
+.file-panel {
+    position: absolute;
+    height: 30px;
+    /*display: none;*/
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#80000000', endColorstr='#80000000')\0;
+    background: rgba( 0, 0, 0, 0.5 );
+    width: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: 300;
+}
+
+
+.file-panel span.cancel {
+    background-position: -48px -24px;
+}
+
+.file-panel span {
+    width: 24px;
+    height: 24px;
+    display: inline;
+    float: right;
+    text-indent: -9999px;
+    overflow: hidden;
+    background: url(../vendor/webupload/icons.png) no-repeat;
+    margin: 5px 1px 1px;
+    cursor: pointer;
+}
+
+.am-icon-close {
+    color: #f37b1d;
+}
+
+.am-icon-check {
+    color: #5eb95e;
+}
+
+.is_something {
+    cursor: pointer;
+}
+
+.select_thumb {
+    float: left;
+    margin-left: 5px;
+}
+
+.new_thumb {
+    float: left;
+}
+
+.am-icon-male {
+    color: #3bb4f2;
+}
+
+.am-icon-female {
+    color: #dd514c;
+}
