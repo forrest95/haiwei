@@ -77,6 +77,8 @@ $config['backends'][] = array(
     'chmodFiles'   => 0777,
     'chmodFolders' => 0755,
     'filesystemEncoding' => 'UTF-8',
+//    'filesystemEncoding' => 'gbk',
+//    'filesystemEncoding' => 'gb2312',
 );
 
 /*================================ Resource Types =====================================*/

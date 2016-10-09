@@ -61,7 +61,7 @@
         //,theme:'default'
         //,themePath:URL +"themes/"
 
-        //,zIndex : 900     //编辑器层级的基数,默认是900
+        ,zIndex : 900     //编辑器层级的基数,默认是900
 
         //针对getAllHtml方法，会在对应的head标签中增加该编码设置。
         //,charset:"utf-8"
@@ -89,8 +89,8 @@
         //首行缩进距离,默认是2em
         //,indentValue:'2em'
 
-        //,initialFrameWidth:1000  //初始化编辑器宽度,默认1000
-        //,initialFrameHeight:320  //初始化编辑器高度,默认320
+        // ,initialFrameWidth:1000  //初始化编辑器宽度,默认1000
+        // ,initialFrameHeight:320  //初始化编辑器高度,默认320
 
         //,readonly : false //编辑器初始化结束后,编辑区域是否是只读的，默认是false
 
@@ -353,6 +353,7 @@
         //默认过滤规则相关配置项目
         //,disabledTableInTable:true  //禁止表格嵌套
         //,allowDivTransToP:true      //允许进入编辑器的div标签自动变成p标签
+        ,allowDivTransToP:false      //允许进入编辑器的div标签自动变成p标签
         //,rgb2Hex:true               //默认产出的数据中的color自动从rgb格式变成16进制格式
 
 		// xss 过滤是否开启,inserthtml等操作

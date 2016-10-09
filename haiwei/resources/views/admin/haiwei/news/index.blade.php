@@ -158,7 +158,8 @@
                     type: "DELETE",
                     url: "/haiwei/news/destroy_checked",
                     data: checked_id,
-                    success: function () {
+                    success: function (data) {
+//                        console.log(data);
                         location.href = location.href;
                     }
                 });

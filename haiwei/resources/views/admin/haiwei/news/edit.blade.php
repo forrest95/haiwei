@@ -75,6 +75,34 @@
                         </div>
                     </div>
 
+                    <div class="am-g am-margin-top">
+                        <div class="am-u-sm-4 am-u-md-2 am-text-right">
+                            首页展示list图
+                        </div>
+
+                        <div class="am-u-sm-8 am-u-md-8 am-u-end col-end">
+                            <div class="am-form-group am-form-file new_thumb">
+                                <button type="button" class="am-btn am-btn-secondary am-btn-sm">
+                                    <i class="am-icon-cloud-upload" id="loading_small"></i> 上传新的缩略图
+                                </button>
+                                <input type="file" id="small_thumb_upload">
+                            </div>
+
+                            <div class="select_thumb">
+                                <button type="button" class="am-btn am-btn-success am-btn-sm" id="ck_thumb_upload1">
+                                    <i class="am-icon-search-plus"></i> 选择已存在的缩略图
+                                </button>
+                                <input type="hidden" name="small_thumb" value="{{$xinwen->small_thumb}}">
+                            </div>
+
+                            <hr data-am-widget="divider" style="" class="am-divider am-divider-dashed"/>
+
+                            <div>
+                                <img src="{{$xinwen->small_thumb}}" id="small_img_show" style="max-height: 200px;">
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="am-g am-margin-top sort">
                         <div class="am-u-sm-4 am-u-md-2 am-text-right">
                             描述信息
@@ -94,6 +122,15 @@
                         </div>
                     </div>
 
+                    <div class="am-g am-margin-top sort">
+                        <div class="am-u-sm-4 am-u-md-2 am-text-right">
+                            排序
+                        </div>
+                        <div class="am-u-sm-8 am-u-md-4 am-u-end col-end">
+                            <input type="text" name="sort_order" class="am-input-sm" value="{{$xinwen->sort_order}}">
+                        </div>
+                    </div>
+
                     {{--<div class="am-g am-margin-top-sm">
                         <div class="am-u-sm-12 am-u-md-2 am-text-right admin-form-text">
                             文章内容
@@ -110,7 +147,7 @@
 
                     <div class="am-g am-margin-top sort" >
                         <p>&nbsp;&nbsp;新闻内容</p>
-                        <script id="container" name="content" type="text/plain" style="width:950px;height:300px;">
+                        <script id="container" name="content" type="text/plain" style="width:90%;height:300px;">
                                       <p>{!!$xinwen->content!!}</p>
                         </script>
                     </div>
@@ -128,7 +165,7 @@
 @section('js')
     <script src="/assets/js/jquery.html5-fileupload.js"></script>
     <script src="/assets/js/upload.js"></script>
-
+    <script src="/assets/js/uploadList.js"></script>
 
     <script src="/assets/vendor/ckfinder/ckfinder.js"></script>
     <script src="/assets/js/ck_upload.js"></script>
@@ -139,7 +176,9 @@
     <script type="text/javascript" src="/assets/vendor/ueditor1_4_3_3-utf8-php/ueditor.all.js"></script>
     <!-- 实例化编辑器 -->
     <script type="text/javascript">
-        var ue = UE.getEditor('container');
+        var ue = UE.getEditor('container', {
+            allowDivTransToP: false
+        });
     </script>
 
 @endsection

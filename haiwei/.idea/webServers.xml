@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="1ed7df24-514e-4236-88e1-7c2c3eee4d75" name="haiwei" url="http://10.1.11.12">
+        <fileTransfer host="10.1.11.12" port="22" rootFolder="/var/www/haiwei" accessType="SFTP" username="root">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

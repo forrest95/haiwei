@@ -25,7 +25,7 @@ class NewsCategory extends Model
      */
     static function get_categories()
     {
-        $categories = Cache::rememberForever('haiwei_category_categories', function () {
+        $categories = Cache::rememberForever('haiwei_news_categories', function () {
             $categories = self::orderBy('parent_id')
                 ->orderBy('sort_order')
                 ->orderBy('id')
@@ -35,10 +35,10 @@ class NewsCategory extends Model
         return $categories;
     }
 
-    //清除栏目缓存
+    //清除新闻栏目缓存
     static function clear()
     {
-        Cache::forget('haiwei_category_categories');
+        Cache::forget('haiwei_news_categories');
     }
 
 

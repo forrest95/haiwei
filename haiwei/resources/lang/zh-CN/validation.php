@@ -112,6 +112,7 @@ return [
 
     'attributes'           => [
         'name'                  => '名称',
+        'tel'                  => '联系方式',
         'username'              => '用户名',
         'email'                 => '邮箱',
         'first_name'            => '名',

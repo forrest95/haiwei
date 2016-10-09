@@ -18,3 +18,23 @@ $("#ck_thumb_upload").click(function () {
         }
     });
 });
+
+$("#ck_thumb_upload1").click(function () {
+    CKFinder.modal({
+        chooseFiles: true,
+        language: 'zh-cn',
+        onInit: function (finder) {
+            finder.on('files:choose', function (evt) {
+                var url = evt.data.files.first().getUrl();
+                $("input[name='small_thumb']").val(url);
+                $("#small_img_show").attr('src', url);
+            });
+
+            finder.on('file:choose:resizedImage', function (evt) {
+                var url = evt.data.resizedUrl;
+                $("input[name='small_thumb']").val(url);
+                $("#small_img_show").attr('src', url);
+            });
+        }
+    });
+});

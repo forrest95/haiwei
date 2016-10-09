@@ -7,7 +7,7 @@
                 </li>
 
                 <li>
-                    <a href="/system/log-viewer">
+                    <a href="{{--/system/log-viewer--}}">
                         <span class="am-icon-refresh am-icon-server"></span> 日志管理
                     </a>
                 </li>

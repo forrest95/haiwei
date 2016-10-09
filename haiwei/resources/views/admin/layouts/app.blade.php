@@ -32,7 +32,7 @@
     以获得更好的体验！</p>
 <![endif]-->
 
-<header class="am-topbar am-topbar-inverse admin-header">
+<header class="am-topbar am-topbar-inverse admin-header" style="z-index: 99">
     <div class="am-topbar-brand">
         <strong>海微科技</strong> <small>后台管理系统</small>
     </div>

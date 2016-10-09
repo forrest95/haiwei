@@ -1,4 +1,4 @@
-//文件上传
+//文件上传  上传图片
 var opts = {
     url: "/system/upload",
     // url: "/system/qiniu",

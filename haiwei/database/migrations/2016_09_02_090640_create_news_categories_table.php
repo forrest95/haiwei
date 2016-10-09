@@ -21,7 +21,7 @@ class CreateNewsCategoriesTable extends Migration
             $table->string('url');*/
             $table->tinyInteger('sort_order')->default('99');
             $table->boolean('is_show')->default(true);
-            $table->text('content');
+//            $table->text('content');
             $table->timestamps();
         });
 

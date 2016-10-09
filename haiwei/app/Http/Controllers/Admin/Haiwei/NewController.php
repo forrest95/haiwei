@@ -34,7 +34,7 @@ class NewController extends CommonController
                 $query->where('category_id', $request->category_id);
             }
         };
-        $xinwens = Xinwen::with('category')->where($where)->orderBy('is_top', 'desc')->orderBy('created_at', 'desc')->paginate(config('haiwei.page_size'));
+        $xinwens = Xinwen::with('category')->where($where)->orderBy('sort_order', 'desc')->orderBy('created_at', 'desc')->paginate(config('haiwei.page_size'));
 //        return $xinwens;
         return view('admin.haiwei.news.index')->with('xinwens', $xinwens)->with(['_newslist'=>'am-active']);
     }
@@ -86,6 +86,7 @@ class NewController extends CommonController
         return back()->with('success', '被删文章已进入回收站~');
     }
 
+    //回收站强制删除单个
     public function force_destroy($id)
     {
         Xinwen::withTrashed()->where('id', $id)->forceDelete();

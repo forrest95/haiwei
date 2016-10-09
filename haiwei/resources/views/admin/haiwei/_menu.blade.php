@@ -20,7 +20,7 @@
                            </a>
                        </li>
                        <li>
-                           <a href="{{route('haiwei.category.index')}}" class="{{$_news_category or ''}}">
+                           <a href="{{route('haiwei.news_category.index')}}" class="{{$_news_category or ''}}">
                                <span class="am-icon-list-alt"></span> 新闻栏目
                                <span class="am-badge am-badge-success am-margin-right am-fr am-radius">{{ \App\Models\haiwei\NewsCategory::count() }}</span>
                            </a>
@@ -41,16 +41,52 @@
                        <span class="am-icon-list"></span>
                        产品中心 <span class="am-icon-angle-right am-fr am-margin-right"></span>
                    </a>
-                   <ul class="am-list am-collapse admin-sidebar-sub {{$_shop or ''}} " id="collapse-products">
+                   <ul class="am-list am-collapse admin-sidebar-sub {{$_products or ''}} " id="collapse-products">
                        <li>
-                           <a href="/shop/wechat/edit" class="am-cf {{$_wechat or ''}}">
+                           <a href="{{route('haiwei.products.index')}}" class="am-cf {{$_productslist or ''}}">
                                <span class="am-icon-list-ol"></span> 产品列表
+                               <span class="am-badge am-badge-secondary am-margin-right am-fr am-radius">{{ \App\Models\haiwei\Product::count() }}</span>
                            </a>
                        </li>
                        <li>
-                           <a href="/shop/order/index" class="{{$_products_category or ''}}">
+                           <a href="{{route('haiwei.products_category.index')}}" class="{{$_products_category or ''}}">
                                <span class="am-icon-list-alt"></span> 产品栏目
-                               <span class="am-badge am-badge-secondary am-margin-right am-fr am-radius">55</span>
+                               <span class="am-badge am-badge-success am-margin-right am-fr am-radius">{{ \App\Models\haiwei\ProductsCategory::count() }}</span>
+                           </a>
+                       </li>
+                       <li>
+                           <a href="{{route('haiwei.products.create')}}" class="{{$_new_product or ''}}">
+                               <span class="am-icon-user"></span> 添加产品
+
+                           </a>
+                       </li>
+
+                   </ul>
+               </li>
+
+               <li class="admin-parent">
+                   <a class="am-cf" data-am-collapse="{parent: '#menus', target: '#collapse-services'}">
+                       <span class="am-icon-user"></span>
+                       服务支持中心 <span class="am-icon-angle-right am-fr am-margin-right"></span>
+                   </a>
+                   <ul class="am-list am-collapse admin-sidebar-sub {{$_services or ''}} " id="collapse-services">
+                       <li>
+                           <a href="{{route('haiwei.methods.index')}}" class="am-cf {{$_methods or ''}}">
+                               <span class="am-icon-list-ol"></span> 常见故障解决方法
+                               <span class="am-badge am-badge-secondary am-margin-right am-fr am-radius">{{ \App\Models\haiwei\Method::count() }}</span>
+                           </a>
+                       </li>
+
+                       <li>
+                           <a href="{{route('haiwei.problems.index')}}" class="am-cf {{$_problems or ''}}">
+                               <span class="am-icon-list-ol"></span> 客户故障问题反馈
+                               <span class="am-badge am-badge-secondary am-margin-right am-fr am-radius">{{ \App\Models\haiwei\Problem::count() }}</span>
+                           </a>
+                       </li>
+                       <li>
+                           <a href="{{route('haiwei.products_category.index')}}" class="{{$_products_category or ''}}">
+                               <span class="am-icon-list-alt"></span> 下载中心
+                               <span class="am-badge am-badge-success am-margin-right am-fr am-radius">{{ \App\Models\haiwei\ProductsCategory::count() }}</span>
                            </a>
                        </li>
 
@@ -58,6 +94,18 @@
                    </ul>
                </li>
 
+               {{--<li>
+                   <a href="/xCms/article/trash" class="{{ $_article_trash or '' }}">
+                       <span class="am-icon-user"></span> 服务支持
+
+                   </a>
+               </li>--}}
+
+               <li>
+                   <a href="/haiwei/finder/index" class="{{ $_finder or '' }}">
+                       <span class="am-icon-photo"></span> 文件管理
+                   </a>
+               </li>
 
                <li>
                    <a href="" class="{{ $_article_category or '' }}">
@@ -72,13 +120,6 @@
                        <span class="am-badge am-badge-success am-margin-right am-fr am-radius">{{ \App\Models\haiwei\Link::count() }}</span>
                    </a>
                </li>
-               <li>
-                   <a href="/haiwei/finder/index" class="{{ $_finder or '' }}">
-                       <span class="am-icon-photo"></span> 文件管理
-                   </a>
-               </li>
-
-
 
                <li class="admin-parent">
                    <a class="am-cf" data-am-collapse="{parent: '#menus', target: '#collapse-trash'}">
@@ -93,9 +134,9 @@
                            </a>
                        </li>
                        <li>
-                           <a href="/xCms/article/trash" class="{{ $_article_trash or '' }}">
+                           <a href="/haiwei/products/trash" class="{{ $_products_trash or '' }}">
                                <span class="am-icon-trash-o"></span> 产品回收站
-                               <span class="am-badge am-badge-danger am-margin-right am-fr am-radius">44</span>
+                               <span class="am-badge am-badge-danger am-margin-right am-fr am-radius">{{ \App\Models\haiwei\Product::onlyTrashed()->count() }}</span>
                            </a>
                        </li>
 
@@ -103,16 +144,11 @@
                    </ul>
                </li>
 
-               <li>
-                   <a href="/xCms/article/trash" class="{{ $_article_trash or '' }}">
-                       <span class="am-icon-user"></span> 服务支持
 
-                   </a>
-               </li>
 
            </ul>
 
-           <div class="am-panel am-panel-default admin-sidebar-panel">
+          <div class="am-panel am-panel-default admin-sidebar-panel">
                <div class="am-panel-bd">
                    <p><span class="am-icon-bookmark"></span> 思考</p>
                    <p>红颜弹指老，刹那芳华！
